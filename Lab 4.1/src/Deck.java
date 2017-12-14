@@ -1,7 +1,7 @@
 
-public class cards {
+public class Deck {
 
-	public cards() {
+	public Deck() {
 		// TODO Auto-generated constructor stub
 	}
 
