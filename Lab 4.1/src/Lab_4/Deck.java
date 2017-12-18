@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Deck {
-	private ArrayList<Card> unDealt;
-	private ArrayList<Card> Dealt;
+	private ArrayList<Card> unDealt = new ArrayList<Card>();
+	private ArrayList<Card> Dealt = new ArrayList<Card>();
 	
 	public Deck(String[] rank, String[] suit, int[] pointValue) 
 	{
@@ -28,9 +28,9 @@ public class Deck {
 		return false;
 	}
 
-	public ArrayList<Card> size()
+	public int size()
 	{
-		return unDealt;
+		return unDealt.size();
 	}
 	
 	public Card deal()
@@ -58,10 +58,10 @@ public class Deck {
 				Dealt.remove(i);
 			}
 		}
-		
-		for(int k = 0; k < unDealt.size(); k++)
+
+		for(int k = unDealt.size(); k < 0; k--)
 		{
-			int r = (int)(Math.random() * 51) + 1;
+			int r = (int)(Math.random() * k);
 			
 			Collections.swap(unDealt,k,r);
 		}
