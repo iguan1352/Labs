@@ -1,4 +1,7 @@
+package Lab_4;
+
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Deck {
 	private ArrayList<Card> unDealt;
@@ -47,7 +50,20 @@ public class Deck {
 	
 	public void shuffle()
 	{
-		int r = (int)(Math.random() * 51) + 1;
-		for(int k = )
+		if(unDealt.size() == 0)
+		{
+			for(int i = 0; i < Dealt.size(); i++)
+			{
+				unDealt.add(Dealt.remove(i));
+				Dealt.remove(i);
+			}
+		}
+		
+		for(int k = 0; k < unDealt.size(); k++)
+		{
+			int r = (int)(Math.random() * 51) + 1;
+			
+			Collections.swap(unDealt,k,r);
+		}
 	}
 }

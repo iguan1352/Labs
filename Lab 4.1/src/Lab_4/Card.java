@@ -1,3 +1,4 @@
+package Lab_4;
 
 public class Card {
 	private String rank;
