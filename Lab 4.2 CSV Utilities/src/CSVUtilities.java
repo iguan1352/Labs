@@ -10,12 +10,17 @@ public class CSVUtilities {
 	public CSVUtilities(File csv) 
 	{
 		this.csv = csv;
-		this.numColumns = CSVData.size();
+		this.numColumns = 7;
 	}
 	
 	public List<String> getColumnHeaders()
 	{
-		return 
+		List<String> headers = new ArrayList<String>();
+		for(int i = 0; i < numColumns; i++)
+		{
+			headers.add(CSVData[i]);
+		}
+		return headers;
 	}
 
 	public List<String> getData(int column)
