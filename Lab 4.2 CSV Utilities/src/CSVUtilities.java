@@ -24,16 +24,19 @@ public class CSVUtilities {
 		while(line != null)
 		{
 			attributes = line.split(",");
-			
+			line = file.readLine();
 		}
 		
 		for(String i : attributes)
 		{
-			//if()
+			if(attributes != null)
+			{
+				CSVData.add(attributes(i));
+			}
 		}
 		
 	}
-	
+
 	public List<String> getColumnHeaders()
 	{
 		List<String> headers = new ArrayList<String>();
@@ -47,16 +50,27 @@ public class CSVUtilities {
 	public List<String> getData(int column)
 	{
 		List<String> columnData = new ArrayList<String>();
-		for(int i = column-1; i < CSVData.size(); i + 7)
+		for(int i = column-1; i < CSVData.size(); i+=7)
+		{
+			
+		}
 	}
 	
 	public List<Integer> getData(int column)
 	{
-		
+		List<Integer> columnData = new ArrayList<Integer>();
+		for(int i = column-1; i < CSVData.size(); i++)
+		{
+			
+		}
 	}
 	
 	public List<Double> getData(int column)
 	{
-		
+		List<Double> columnData = new ArrayList<Double>();
+		for(int i = column-1; i < CSVData.size(); i++)
+		{
+			
+		}
 	}
 }
