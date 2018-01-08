@@ -1,12 +1,8 @@
 //Ivy Guan
 //Created on January 2, 2018
 
-
-
-import java.beans.EventHandler;
-
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
@@ -20,6 +16,9 @@ public class GameCode extends Application{
 		Application.launch(args);
 		//long 
 	}
+
+	private boolean buttonClicked;
+	private int numClicks;
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception 
@@ -32,17 +31,38 @@ public class GameCode extends Application{
 		button.setMaxSize(80, 30); //sets button size
 		//button.setLayout(new FlowLayout(FlowLayout.CENTER));
 		
-		button.setOnAction(new EventHandler<ActionEvent>() 
+		/*button.setOnAction(new EventHandler<ActionEvent>() 
 		{
 			@Override
 			public void handle(ActionEvent event)
 			{
-				if(//if mouse is clicked add one to score)
+				buttonClicked = true;
+				if(buttonClicked)
 				{
-					
+					numClicks++;
 				}
 			}
 		});
+		buttonClicked = false;*/
+		
+		button.setOnAction(value ->
+		{
+			buttonClicked = true;
+			if(buttonClicked)
+			{
+				numClicks++;
+				System.out.println(numClicks);
+			}
+		});
+		buttonClicked = false;
+		
+		new AnimationTimer()
+		{
+			public void handle(long k)
+			{
+				
+			}
+		}.start();
 
 		primaryStage.setScene(display); //creates stage using the format
         primaryStage.show(); //displays the stage
