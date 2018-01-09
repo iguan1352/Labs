@@ -17,8 +17,9 @@ public class GameCode extends Application{
 		//long 
 	}
 
-	private boolean buttonClicked;
+	private boolean buttonClicked = false;
 	private int numClicks;
+	
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception 
@@ -29,21 +30,6 @@ public class GameCode extends Application{
 		HBox hbox = new HBox(button);
 		Scene display = new Scene(hbox,200,200); //the format of stage
 		button.setMaxSize(80, 30); //sets button size
-		//button.setLayout(new FlowLayout(FlowLayout.CENTER));
-		
-		/*button.setOnAction(new EventHandler<ActionEvent>() 
-		{
-			@Override
-			public void handle(ActionEvent event)
-			{
-				buttonClicked = true;
-				if(buttonClicked)
-				{
-					numClicks++;
-				}
-			}
-		});
-		buttonClicked = false;*/
 		
 		button.setOnAction(value ->
 		{
@@ -56,9 +42,10 @@ public class GameCode extends Application{
 		});
 		buttonClicked = false;
 		
+		long startTime = System.nanoTime();
 		new AnimationTimer()
 		{
-			public void handle(long k)
+			public void handle(long now)
 			{
 				
 			}
