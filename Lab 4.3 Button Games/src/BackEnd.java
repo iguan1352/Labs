@@ -24,6 +24,7 @@ public class BackEnd {
 			StringBuilder sb = new StringBuilder();
 			sb.append("One,1\n");
 			sb.append("Two,2\n");
+			//appends to csv file but need to edit it so it updates correctly
 			
 			pw.write(sb.toString());
 			pw.close();
