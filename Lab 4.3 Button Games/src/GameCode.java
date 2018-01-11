@@ -14,10 +14,8 @@ public class GameCode extends Application{
 	
 	public static void main(String[] args)
 	{	
-		//long startTime = System.nanoTime();
 		BackEnd.fileCSV();
 		Application.launch(args);
-		//BackEnd.fileCSV();
 	}
 
 	private boolean buttonClicked = false;
@@ -45,27 +43,34 @@ public class GameCode extends Application{
 				numClicks++;
 				System.out.println(numClicks);
 			}
-		});
-		buttonClicked = false;
-		
-		startTime = System.nanoTime() + 1000000000L;
-		new AnimationTimer()
-		{
-
-			public void handle(long now)
+			startTime = System.nanoTime() + 1000000000L;
+			new AnimationTimer()
 			{
-				if(now > startTime)
+
+				public void handle(long now)
 				{
-					startTime = now + 1000000000L;
-					if(startTime == 1000000000L)
+					if(now > startTime)
 					{
-						stop(); //stops the timer
-						hbox.getChildren().addAll(endLabel,button);
+						startTime = now + 1000000000L;
+						System.out.println(startTime);
 					}
 				}
-			}
-		}.start();
-
+			}.start();
+		});
+		if(startTime > 1000000000L * 10)
+		{
+			stop(); //stops the timer
+			//hbox.getChildren().addAll(endLabel,button);
+			
+			//place stop and if statement outside(this might be more efficient)
+			// also need to convert the nanoseconds to seconds and display the time in hbox
+			//after each game need to but high score in the csv file
+			
+		}
+		buttonClicked = false;
+		
+		
+		
 		primaryStage.setScene(display); //creates stage using the format
         primaryStage.show(); //displays the stage
         

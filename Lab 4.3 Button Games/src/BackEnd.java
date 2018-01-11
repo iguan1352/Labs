@@ -29,4 +29,8 @@ public class BackEnd {
 			pw.write(sb.toString());
 			pw.close();
 		}
+		
+		//put in a print statement that tells user they have a new high score
+		//use if statement and sort the csv file so program can easily compare the users score 
+		//and the data list
 }
