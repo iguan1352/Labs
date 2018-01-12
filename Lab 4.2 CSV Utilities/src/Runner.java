@@ -14,5 +14,6 @@ public class Runner {
 		newTable = (ArrayList<String>) csvFile.getDataString(7);
 		csvFile.getDataString(7);
 	}
+	
 
 }
