@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -14,19 +14,23 @@ public class CSVUtilities {
 	public CSVUtilities(File csv) throws IOException
 	{
 		this.numColumns = 7;
+		ArrayList<String> data = new ArrayList<String>();
 		Path filePath = Paths.get(csv.getAbsolutePath());
-		BufferedReader file = new BufferedReader(new FileReader(csv));
+		BufferedReader file = Files.newBufferedReader(filePath);
 		String line = file.readLine();
 		String[] attributes = null;
 		while(line != null)
 		{
-			attributes = line.split(",");
 			line = file.readLine();
+			if(line != null)
+			{
+				attributes = line.split(",");
+			}
 			if(attributes != null)
 			{
 				for(String i : attributes)
 				{
-					CSVData.add(i);
+					data.add(i);
 				}
 			}	
 		}
@@ -48,14 +52,14 @@ public class CSVUtilities {
 		for(int i = column; i < this.CSVData.size(); i+=numColumns)
 		{
 			String value = CSVData.get(i);
-			if(value.equals(""))
+			if(value.equals(" "))
 			{
 				columnData.add("NULL");
 			}
 			else
 			{
 				columnData.add(CSVData.get(i));
-			}
+			}	
 		}
 		return columnData;
 	}
