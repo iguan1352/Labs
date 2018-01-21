@@ -49,7 +49,7 @@ public class CSVUtilities {
 	public List<String> getDataString(int column)
 	{
 		ArrayList<String> columnData = new ArrayList<String>();
-		for(int i = column; i < this.CSVData.size(); i+=numColumns)
+		for(int i = column; i < this.CSVData.size(); i = i + numColumns)
 		{
 			String value = CSVData.get(i);
 			if(value.equals(" "))
@@ -84,7 +84,7 @@ public class CSVUtilities {
 	
 	public List<Double> getDataDouble(int column)
 	{
-		List<Double> columnData = new ArrayList<Double>();
+		ArrayList<Double> columnData = new ArrayList<Double>();
 		for(int i = column; i < this.CSVData.size(); i+=numColumns)
 		{
 			String value = CSVData.get(i);
@@ -99,4 +99,5 @@ public class CSVUtilities {
 		}
 		return columnData;
 	}
+
 }

@@ -11,8 +11,12 @@ public class Runner {
 		CSVUtilities csvFile =  new CSVUtilities(csv); 
 		
 		ArrayList<String> newTable = new ArrayList<String>();
-		newTable = (ArrayList<String>) csvFile.getDataString(7);
-		csvFile.getDataString(7);
+		newTable = (ArrayList<String>) csvFile.getColumnHeaders();
+		for(int i = 0; i < newTable.size(); i++)
+		{
+			System.out.println("Header" + ": " + newTable.get(i));
+		}
+		
 	}
 	
 
