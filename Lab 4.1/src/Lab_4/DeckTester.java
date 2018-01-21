@@ -11,7 +11,7 @@ public class DeckTester {
 		
 		cardDeck.shuffle();
 		
-		for(int i = 0; i < cardDeck.size(); i++)
+		for(int i = 0; i < 52; i++)
 		{
 			System.out.println(cardDeck.deal());
 		}

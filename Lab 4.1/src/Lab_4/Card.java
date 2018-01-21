@@ -14,17 +14,17 @@ public class Card {
 
 	public String getRank()
 	{
-		return rank;
+		return this.rank;
 	}
 	
 	public String getSuit()
 	{
-		return suit;
+		return this.suit;
 	}
 	
 	public int getValue()
 	{
-		return pointValue;
+		return this.pointValue;
 	}
 	public String toString()
 	{
